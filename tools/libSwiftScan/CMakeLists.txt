@@ -8,7 +8,7 @@ add_swift_host_library(libSwiftScan SHARED
   libSwiftScan.cpp
   c-include-check.c)
 
-if(${SWIFT_HOST_VARIANT_SDK} IN_LIST SWIFT_DARWIN_PLATFORMS)
+if(SWIFT_HOST_VARIANT_SDK IN_LIST SWIFT_DARWIN_PLATFORMS)
   # Workaround for a linker crash related to autolinking: rdar://77839981
   set_property(TARGET libSwiftScan APPEND_STRING PROPERTY
                LINK_FLAGS " -lobjc ")
